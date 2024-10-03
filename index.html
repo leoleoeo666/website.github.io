@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
+    <title>Home Page & Email Collector</title>
 </head>
 <body>
     <nav>
         <a href="index.html">Home</a>
-        <a href="about.html">About</a> <!-- The new About link -->
+        <a href="about.html">About</a>
     </nav>
 
     <h1>Welcome to My Website</h1>
     <p>This is the homepage of my website. Feel free to browse around!</p>
+
+    <h1>Subscribe to our Newsletter</h1>
+    <form id="emailForm" name="emailForm" action="YOUR_GOOGLE_APPS_SCRIPT_URL" method="POST">
+        <label for="email">Enter your email:</label><br><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>
