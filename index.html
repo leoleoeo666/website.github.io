@@ -38,11 +38,11 @@
         <button type="submit">Login</button>
     </form>
 
-    <!-- Add your Firebase authentication script below -->
+    <!-- Firebase Authentication Script -->
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
     <script>
-        // Initialize Firebase here
+        // Firebase configuration
         var firebaseConfig = {
             apiKey: "your-api-key",
             authDomain: "your-auth-domain",
@@ -55,7 +55,7 @@
         firebase.initializeApp(firebaseConfig);
         var auth = firebase.auth();
 
-        // Sign Up form handling
+        // Signup
         document.getElementById("signupForm").addEventListener("submit", function (e) {
             e.preventDefault();
             var email = document.getElementById("email").value;
@@ -65,15 +65,15 @@
                 .then((userCredential) => {
                     // Send email verification
                     userCredential.user.sendEmailVerification().then(() => {
-                        alert('Verification email sent. Please check your inbox.');
+                        alert('Verification email sent');
                     });
                 })
                 .catch((error) => {
-                    console.error("Error: ", error.message);
+                    console.error(error.message);
                 });
         });
 
-        // Login form handling
+        // Login
         document.getElementById("loginForm").addEventListener("submit", function (e) {
             e.preventDefault();
             var email = document.getElementById("loginEmail").value;
@@ -84,11 +84,11 @@
                     if (userCredential.user.emailVerified) {
                         alert("Login successful");
                     } else {
-                        alert("Please verify your email before logging in.");
+                        alert("Please verify your email first");
                     }
                 })
                 .catch((error) => {
-                    console.error("Error: ", error.message);
+                    console.error(error.message);
                 });
         });
     </script>
