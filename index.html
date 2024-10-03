@@ -38,6 +38,14 @@
         <button type="submit">Login</button>
     </form>
 
+    <!-- Email Collection Form for Google Sheets -->
+    <h1>Subscribe to our Newsletter</h1>
+    <form id="emailForm" name="emailForm" action="https://script.google.com/macros/s/YOUR_GOOGLE_SCRIPT_ID/exec" method="POST">
+        <label for="emailSubmit">Enter your email:</label><br><br>
+        <input type="email" id="emailSubmit" name="email" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
     <!-- Firebase Authentication Script -->
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
