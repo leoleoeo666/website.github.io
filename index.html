@@ -14,31 +14,8 @@
     <h1>Welcome to My Website</h1>
     <p>This is the homepage of my website. Feel free to browse around!</p>
 
-    <!-- Sign Up Section -->
-    <h1>Sign Up</h1>
-    <form id="signupForm">
-        <label for="email">Enter your email:</label><br><br>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required><br><br>
+   
 
-        <label for="password">Enter your password:</label><br><br>
-        <input type="password" id="password" name="password" placeholder="Enter your password" required><br><br>
-
-        <button type="submit">Sign Up</button>
-    </form>
-
-    <!-- Login Section -->
-    <h1>Login</h1>
-    <form id="loginForm">
-        <label for="email">Enter your email:</label><br><br>
-        <input type="email" id="loginEmail" name="email" placeholder="Enter your email" required><br><br>
-
-        <label for="password">Enter your password:</label><br><br>
-        <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required><br><br>
-
-        <button type="submit">Login</button>
-    </form>
-
-    <!-- Email Collection Form for Google Sheets -->
     <h1>Subscribe to our Newsletter</h1>
     <form id="emailForm" name="emailForm" action="https://script.google.com/macros/s/AKfycbxtRbq-9x4ZGHeKCdQ53hpoSrHMLQVrUI4cRFW6QyK0CGkXNuM4AhgoEDoR-wRxr436/exec" method="POST">
         <label for="emailSubmit">Enter your email:</label><br><br>
@@ -46,59 +23,7 @@
         <input type="submit" value="Submit">
     </form>
 
-    <!-- Firebase Authentication Script -->
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
-    <script>
-        // Firebase configuration
-        var firebaseConfig = {
-            apiKey: "your-api-key",
-            authDomain: "your-auth-domain",
-            projectId: "your-project-id",
-            storageBucket: "your-storage-bucket",
-            messagingSenderId: "your-sender-id",
-            appId: "your-app-id"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        var auth = firebase.auth();
-
-        // Signup
-        document.getElementById("signupForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-
-            auth.createUserWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    // Send email verification
-                    userCredential.user.sendEmailVerification().then(() => {
-                        alert('Verification email sent');
-                    });
-                })
-                .catch((error) => {
-                    console.error(error.message);
-                });
-        });
-
-        // Login
-        document.getElementById("loginForm").addEventListener("submit", function (e) {
-            e.preventDefault();
-            var email = document.getElementById("loginEmail").value;
-            var password = document.getElementById("loginPassword").value;
-
-            auth.signInWithEmailAndPassword(email, password)
-                .then((userCredential) => {
-                    if (userCredential.user.emailVerified) {
-                        alert("Login successful");
-                    } else {
-                        alert("Please verify your email first");
-                    }
-                })
-                .catch((error) => {
-                    console.error(error.message);
-                });
-        });
+    
     </script>
 </body>
 </html>
