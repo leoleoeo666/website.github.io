@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page & User Authentication</title>
+    <title>Home Page with Image</title>
 </head>
 <body>
     <nav>
@@ -14,16 +14,14 @@
     <h1>Welcome to My Website</h1>
     <p>This is the homepage of my website. Feel free to browse around!</p>
 
-   
+    <!-- Add your image here -->
+    <img src="images/image1.jpg" alt="A description of the image" width="500" height="auto">
 
     <h1>Subscribe to our Newsletter</h1>
-    <form id="emailForm" name="emailForm" action="https://script.google.com/macros/s/AKfycbxtRbq-9x4ZGHeKCdQ53hpoSrHMLQVrUI4cRFW6QyK0CGkXNuM4AhgoEDoR-wRxr436/exec" method="POST">
+    <form id="emailForm" name="emailForm" action="https://script.google.com/macros/s/YOUR_GOOGLE_SCRIPT_ID/exec" method="POST">
         <label for="emailSubmit">Enter your email:</label><br><br>
         <input type="email" id="emailSubmit" name="email" required><br><br>
         <input type="submit" value="Submit">
     </form>
-
-    
-    </script>
 </body>
 </html>
